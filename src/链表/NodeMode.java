@@ -1,4 +1,4 @@
-package node;
+package 链表;
 
 public class NodeMode {
     //链表的增删改查

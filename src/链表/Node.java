@@ -1,4 +1,4 @@
-package node;
+package 链表;
 
 public class Node {
     int data;
