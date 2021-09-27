@@ -1,8 +1,6 @@
 package 树;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Stack;
+import java.util.*;
 
 public class TreeNodeModel {
     public static void main(String[] args) {
@@ -117,11 +115,28 @@ public class TreeNodeModel {
                 if (top.rightChild != null && top.rightChild != pre) {
                     root = top.rightChild;
                 } else {
-                    root=stack.pop();
+                    root = stack.pop();
                     pre = root;
                     System.out.println("非递归==" + pre.data);
                     root = null;
                 }
+            }
+        }
+    }
+
+    //广度优先遍历 队列
+
+    public static void Gpro(TreeNode treeNode) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(treeNode);
+        while (!queue.isEmpty()) {
+            TreeNode root = queue.poll();
+            System.out.println(root.data);
+            if (root.leftChild!=null){
+                queue.offer(root.leftChild);
+            }
+            if (root.rightChild!=null){
+                queue.offer(root.rightChild);
             }
         }
     }

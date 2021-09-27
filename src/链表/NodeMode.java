@@ -11,13 +11,12 @@ public class NodeMode {
         nodeAr.insert(4, 2);
         nodeAr.insert(5, 9);
         nodeAr.insert(2, 5);
-
         nodeAr.output();
         nodeAr.reverseList();
         System.out.println("---------------------------------------");
         nodeAr.output();
         nodeAr.reverseList2(nodeAr.getNode());
-        System.out.println("*****************************************");
+        System.out.println("****************************************");
         nodeAr.output();
     }
 }
