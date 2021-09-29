@@ -6,6 +6,10 @@ public class 优先队列 {
     public static void main(String[] args) {
         PriorityQueue2 priorityQueue = new PriorityQueue2();
         priorityQueue.enQueue(3);
+        priorityQueue.enQueue(5);
+        priorityQueue.enQueue(10);
+        priorityQueue.enQueue(2);
+        priorityQueue.enQueue(7);
     }
 
 
