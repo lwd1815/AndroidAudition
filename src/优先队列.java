@@ -10,6 +10,9 @@ public class 优先队列 {
         priorityQueue.enQueue(10);
         priorityQueue.enQueue(2);
         priorityQueue.enQueue(7);
+        System.out.println("最大优先队列=="+priorityQueue.deQueue());
+        System.out.println("最大优先队列=="+priorityQueue.deQueue());
+        System.out.println("最大优先队列=="+priorityQueue.deQueue());
     }
 
 
@@ -27,7 +30,19 @@ class PriorityQueue2 {
         if (size >= array.length) {
             reSize();
         }
+        array[size++] = key;
         upAdjust();
+    }
+
+    public int deQueue() {
+        if (size < 0) {
+            throw new IndexOutOfBoundsException("");
+        }
+        int heap = array[0];
+        array[0] = array[--size];
+        downAdjust();
+        return heap;
+
     }
 
     public void upAdjust() {
@@ -43,8 +58,28 @@ class PriorityQueue2 {
         array[childIndex] = temp;
     }
 
+    public void downAdjust() {
+        int parentIndex = 0;
+        int childIndex = 1;
+        int temp = array[0];
+        while (childIndex < size) {
+            if (childIndex + 1 < size && array[childIndex + 1] > array[childIndex]) {
+                childIndex++;
+            }
+            if (temp > array[childIndex]) {
+                break;
+            }
+
+            array[parentIndex] = array[childIndex];
+            parentIndex = childIndex;
+            childIndex = parentIndex *2 + 1;
+        }
+
+        array[parentIndex] = temp;
+    }
+
     public void reSize() {
-        int newSize = 2 * size;
+        int newSize = this.size*2;
         this.array = Arrays.copyOf(this.array, newSize);
     }
 }
