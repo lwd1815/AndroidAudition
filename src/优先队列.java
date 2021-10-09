@@ -44,7 +44,6 @@ class PriorityQueue2 {
         return heap;
 
     }
-
     public void upAdjust() {
         //最大优先队列
         int childIndex = size - 1;
